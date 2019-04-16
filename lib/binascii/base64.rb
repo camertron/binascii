@@ -4,7 +4,7 @@ module Binascii
       string.unpack('m').first
     end
 
-    def b2a_base64(data, newline = true)
+    def b2a_base64(data, newline: true)
       result = [data].pack('m').gsub!("\n", '')
       result << "\n" if newline
       result

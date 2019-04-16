@@ -34,6 +34,8 @@ module Binascii
         line_len = 0
         cr_lf = false
 
+        # This code is obtusely procedural for performance reasons.
+        # The python C version isn't much better.
         Utils.each_byte_quad(data) do |leading, byte, trailing1, trailing2|
           repl = nil
           repl_size = 1
