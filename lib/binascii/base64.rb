@@ -5,7 +5,8 @@ module Binascii
     end
 
     def b2a_base64(data, newline: true)
-      result = [data].pack('m').gsub!("\n", '')
+      result = [data].pack('m')
+      result.gsub!("\n", '')
       result << "\n" if newline
       result
     end
