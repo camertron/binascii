@@ -3,11 +3,11 @@
 module Binascii
   module Hex
     A2B_LO = (('0'..'9').to_a + ('a'..'z').to_a + ('A'..'Z').to_a)
-      .each_with_object({}).with_index { |(chr, ret), idx| ret[chr.ord] = idx }
+      .each_with_object({}) { |chr, ret| ret[chr.ord] = chr.to_i(16) }
       .freeze
 
     A2B_HI = A2B_LO
-      .each_with_object({}) { |(ord, idx), ret| ret[ord] = idx + (0xF * idx) }
+      .each_with_object({}) { |(ord, idx), ret| ret[ord] = idx << 4 }
       .freeze
 
     B2A = (0...256).each_with_object({}) do |b, ret|
