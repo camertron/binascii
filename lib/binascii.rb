@@ -1,9 +1,9 @@
-require 'binascii/qp'
-require 'binascii/uu'
-require 'binascii/base64'
-require 'binascii/hqx'
-require 'binascii/crc32'
-require 'binascii/hex'
+require_relative 'binascii/qp'
+require_relative 'binascii/uu'
+require_relative 'binascii/base64'
+require_relative 'binascii/hqx'
+require_relative 'binascii/crc32'
+require_relative 'binascii/hex'
 
 module Binascii
   include Qp

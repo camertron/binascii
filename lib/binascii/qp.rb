@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'binascii/utils'
+require_relative 'utils'
 
 module Binascii
   module Qp
